@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
     age: {
       type: String
     },
-    id: {
+   roll: {
       type: String
     }
   });
