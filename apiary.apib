@@ -1,0 +1,164 @@
+FORMAT: 1A
+HOST: https://127.0.0.1:4000/
+
+# Campus API
+
+Campus API is a simple API of user information
+
+## User Collection [/capmus/user]
+
+### List All Users [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                 "status": "success",
+                 "result": 7,
+                 "data": {
+                        "users": [
+                             {
+                                "_id": "5dfc6cb56fb2011c9099719a",
+                                "name": "hello world",
+                                "age": "22",
+                                "id": "1004",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "5e0c371ca18f1d0e9465bac9",
+                                "__v": 0,
+                                "name": "CSE students",
+                                "age": "4444",
+                                "id": "6666"
+                            },
+                            {
+                                "_id": "5e0c411d4910fc149746cd67",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "5e0c42094910fc149746cd68",
+                                "name": "abc",
+                                "id": "777",
+                                "age": "23",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "5e0c42894910fc149746cd69",
+                                "name": "abc",
+                                "id": "777",
+                                "age": "23",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "5e0c430c4910fc149746cd6a",
+                                "name": "uuuu",
+                                "id": "8888",
+                                "age": "29983",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "5e0c4b374910fc149746cd6b",
+                                "name": "Bappi Kumar2",
+                                "age": "22",
+                                "id": "1004",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "5e0cda430af8590e44b546f5",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "5e0cda570af8590e44b546f6",
+                                "__v": 0
+                            }
+                        ]
+                    }
+                }
+        ]
+        
+
+
+### Create a New User [POST]
+
+You may create new user using this action. It takes a JSON
+object containing user name, roll and phone.
+
++ Request (application/json)
+
+        {
+            "name": "uuuu",
+            "id": "8888",
+            "age": "29983",
+        }
+
++ Response 201 (application/json)
+
+
+    + Body
+
+                {
+                "_id": "5e0c430c4910fc149746cd6a",
+                "name": "uuuu",
+                "id": "8888",
+                "age": "29983",
+                "__v": 0
+            }
+
+
+
+
+
+## User Retrieve Update and Delete [/capmus/user/5e0c430c4910fc149746cd6a]
+
+### Get single User [GET]
+
++ Response 200 (application/json)
+
+        
+        {
+            "status": "success",
+            "data": {
+                 "users": {
+                            "_id": "5e0c430c4910fc149746cd6a",
+                            "name": "uuuu",
+                            "id": "8888",
+                            "age": "29983",
+                            "__v": 0
+                }    
+            }
+        }
+    
+
+
+### Update a User [PATCH]
+
+You may update a  user using this action. It takes a JSON
+object containing update user information.
+
++ Request (application/json)
+
+        {
+            "id": "777",
+        }
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "_id": "5e0c42894910fc149746cd69",
+                "name": "abc",
+                "id": "777",
+                "age": "23",
+                "__v": 0
+            }
+
+### Delete a User [DELETE]
+
+You may delete a user using this action.
+
+
++ Response 200 (application/json)
+
+    + Headers
